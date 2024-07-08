@@ -7,8 +7,8 @@ class SmsSenderService
     {
         $curl = curl_init();
         $params = [
-            'api_id' => env('VATAN_SMS_API_ID'),
-            'api_key' => env('VATAN_SMS_API_KEY'),
+            'api_id' => "xxx",
+            'api_key' => "xxxx",
             'sender' => 'F.Yuzuguldu',
             'message_type' => 'turkce',
             'message_content_type' => 'bilgi',

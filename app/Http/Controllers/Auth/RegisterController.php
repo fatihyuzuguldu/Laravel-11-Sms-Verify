@@ -39,7 +39,7 @@ class RegisterController extends Controller
         return Validator::make($data, [
             'UserFullName' => ['required', 'string', 'max:255'],
             'UserPhone' => ['required', 'string', 'size:10', 'unique:users', new PhoneNumber],
-            // size:11 ile 11 haneli olmasını sağlıyoruz
+            // size:10 ile 10 haneli olmasını sağlıyoruz
         ]);
     }
 

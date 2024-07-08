@@ -6,11 +6,25 @@
         @csrf
         <div class="mb-3">
             <label for="UserFullName">İsim</label>
-            <input type="text" class="form-control" placeholder="İsim" id="UserFullName" name="UserFullName" :value="old('UserFullName')" required autocomplete="UserFullName" autofocus>
+            <input type="text" class="form-control" placeholder="İsim" id="UserFullName" name="UserFullName" {{ old('UserFullName') }} required autocomplete="name" autofocus>
         </div>
         <div class="mb-3">
             <label for="UserPhone">Telefon</label>
-            <input type="text" class="form-control" placeholder="Telefon" id="UserPhone" name="UserPhone" :value="old('UserPhone')" required autocomplete="UserPhone" autofocus>
+            <input
+                type="tel"
+                class="form-control"
+                placeholder="Telefon"
+                id="UserPhone"
+                name="UserPhone"
+                value="{{ old('UserPhone') }}"
+                required
+                autocomplete="tel"
+                autofocus
+                minlength="10"
+                maxlength="10"
+                pattern="[0-9]{10}"
+                title="Lütfen 10 haneli bir telefon numarası girin"
+                oninput="this.value = this.value.replace(/[^0-9]/g, '');">
         </div>
         @if ($errors->any())
             <div class="alert alert-danger">

@@ -17,10 +17,6 @@
     <title>@yield('title') - Sarkay Yönetim</title>
 </head>
 
-<!-- Preloader -->
-<div class="preloader">
-    <img src="../assets/images/logos/favicon.png" alt="loader" class="lds-ripple img-fluid">
-</div>
 <body>
 
     <div id="main-wrapper">

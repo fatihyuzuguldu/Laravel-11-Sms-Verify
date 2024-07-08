@@ -47,11 +47,14 @@ class LoginController extends Controller
             $smsSenderService = new SmsSenderService();
             $response = $smsSenderService->sendVerifySms($phonenumber, $verification_code, $userfullname);
 
+            \Log::info('SMS Service Response: ', $response);
+
             if ($response['status'] === 'success') {
                 return redirect()->route('verify');
             } else {
-                return back()->withErrors(['verification_code' => 'SMS doğrulaması başarısız.'])->withInput();
+                return back()->withErrors(['verification_code' => 'SMS doğrulaması başarısız.' , $response])->withInput();
             }
+
         } else {
             return back()->withErrors(['UserPhone' => 'Bu telefon numarası kayıtlı değil.'])->withInput();
         }

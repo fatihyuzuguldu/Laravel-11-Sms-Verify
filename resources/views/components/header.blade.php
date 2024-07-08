@@ -9,10 +9,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <!-- Favicon icon-->
-    <link rel="shortcut icon" type="image/png" href="assets/images/logos/favicon.png">
+    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png">
 
     <!-- Core Css -->
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/styles.css">
 
     <title>{{ config('app.name', 'Sarkay Yönetim') }} - Sarkay Yönetim</title>
 

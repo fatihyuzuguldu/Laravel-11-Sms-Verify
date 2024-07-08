@@ -1,8 +1,7 @@
-<!-- resources/views/auth/verify.blade.php -->
 @extends('layouts.app')
 @section('title', 'Sms Doğrulama')
 @section('content')
-    <form method="POST" action="{{ route('verify') }}">
+    <form method="POST" action="{{ route('verify') }}" id="verifyForm">
         @csrf
         <div class="mb-3">
             <h3>Sms Doğrulama</h3>
@@ -37,11 +36,10 @@
             </div>
             <div class="d-flex align-items-left">
                 <p class="fs-12 mb-0 fw-medium">Başka hesabın mı var?</p>
-                <a class="text-primary fw-bolder ms-2" href="{{ route('logout') }}">Çıkış Yap</a>
+                <a class="text-primary fw-bolder ms-2" href="{{ route('logout.form') }}">Çıkış Yap</a>
             </div>
         </div>
     </form>
-
     <script>
         function goToNextInput(event, nextInputName) {
             var currentInput = event.target;
